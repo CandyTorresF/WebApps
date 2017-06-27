@@ -29,8 +29,13 @@ function buscarPublicaciones(){
                 $("#publicacionesEnBusqueda").html("");
                 $.each(jsonReceived, function(index){
                     $("#publicacionesEnBusqueda").append(
-                        '<div class="publicacion">' + '<h3 class="comentario">' + jsonReceived[index].contenido + '<span class="etiqueta" style="color:blue">' + ' ' + jsonReceived[index].etiqueta + '</span>' + '</h3>' +
-                        '<span style="color:red" class="usuario">' + jsonReceived[index].username + '</span>' + '</div>' + '<br/>'
+                        '<div class="publicacion">' + 
+                        '<h3 class="comentario">' + jsonReceived[index].contenido + '</h3>' + 
+                        '<span class="etiqueta" style="color:blue">' + ' ' + jsonReceived[index].etiqueta + '</span>' + 
+                        '<br/>' + 
+                        '<span style="color:red" class="usuario">' + jsonReceived[index].username + '</span>'+
+                        '<center><input type="submit" class="like" value="Like"/></center>' +
+                        '</div>' + '<br/>'
                     );
                 });
                 
@@ -73,7 +78,7 @@ function buscarPublicaciones(){
             }
         });
         
-        /*
+        
         $(document).on('click', '.like', function () {
         
             var publicacion = $(this).closest('.publicacion');
@@ -134,7 +139,7 @@ function buscarPublicaciones(){
                             //alert(jsonReceived.identificador);
                             //alert(jsonReceived.usuario);
                             //alert("SI");
-                            window.location.replace("home.html");
+                            window.location.replace("busqueda.html");
                         },
                         error : function(errorMessage){
                             alert("NO");
@@ -147,7 +152,7 @@ function buscarPublicaciones(){
                 }
             });  
         });
-        */
+        
     }
 }
 
