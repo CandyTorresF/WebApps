@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<comments>
+	<comment>
+		<name email="thoom1961@jourrapide.com"> Thomas Omaley </name>
+		<text> De las mejores hamburguesas que he probado!</text>
+	</comment>
+	<comment>
+		<name email="saps1963@einrot.com"> Sara Pattick</name>
+		<text> Tiene calidad, buen precio, exelente sabor y está servida como tu la quieras, no necesitas nada mas.</text>
+	</comment>
+	<comment>
+		<name email="osts1936@fleckens.hu"> Oscar Tunskten </name>
+		<text> Me muero por pedir nuevamente. </text>
+	</comment>
+	<comment>
+		<name email="dinvis1952@teleworm.us"> Daniel Vinck </name>
+		<text> Como chef externo, solo puedo decir 10/10</text>
+	</comment>
+	<comment>
+		<name email="turnot1972@rhyta.com" photo="tobias.jpg"> Tobias Notradame </name>
+		<text> Vine desde Chiapas solamente para probar estas hamburguesas.</text>
+	</comment>
+</comments>

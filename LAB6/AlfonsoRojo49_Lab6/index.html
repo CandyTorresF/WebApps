@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+    
+    Luis Alfonso Rojo Sánchez - A01113049
+    
+    Imágenes utilizadas:
+    https://b.zmtcdn.com/data/pictures/chains/2/16582912/be491e63d0c14ebc6a34db1d4c6f2a89_featured_v2.jpg
+    https://twitter.com/mrburgertruck?lang=es
+    
+    https://stackoverflow.com/questions/2160890/how-do-you-append-rows-to-a-table-using-jquery
+    -->
+    <head>
+        <title>Mr. Burger</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <!-- <script type="text/javascript" src="scripts/script.js"></script> -->
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/scriptjQuery.js"></script>
+    </head>
+    
+    <body>
+        <!-- Título -->
+        <h1>Mr. Burger</h1>
+        <!-- Menu -->
+        <ul id="menu">
+            <li class="selected orden">Arma tu orden</li>
+            <li class="comentario">Déjanos un comentario</li>
+            <li class="chefs">Conoce a los chefs</li>
+            <li class="registro">Registro</li>
+            <li class="login">Inicio de sesión</li>
+            <li class="ordenes">Ordenes</li>
+        </ul>
+        <!-- Imágen -->
+        <center>
+            <img src="images/MrBurgerBanner.jpg" align=center>
+        </center>
+        <!-- Slogan -->
+        <div id="slogan">
+            <p>
+                <center>
+                    <span>
+                        <img id="imagen" src="images/logo.png" width="150" height="150"><br/>
+                        <br/>
+                        "Hamburguesas y papas de la manera que siempre debieron ser"<br/>
+                        <br/>
+                    </span>
+                </center>
+            </p>
+        </div>
+        
+        <!-- Página para realizar una orden -->
+        <div id="orden" class="currentSelection">
+            <fieldset>
+                <legend>Creación de hamburguesa</legend>
+                <!-- Nombre del Cliente -->
+                <p>
+                    Ingrese su nombre: <input type="text" id="nombreCliente">
+
+                    <span id="clientNameErrorMessage" class="hiddenElement">
+                        Por favor ingresa tu nombre.
+                    </span>
+
+                </p>
+
+                <!-- Tipo de Hamburguesa -->
+                <p> 
+                    Elige el tipo de hamburgesa:
+
+                    <span id="typeErrorMessage" class="hiddenElement">
+                        Por favor elige un tipo de hamburguesa.
+                    </span>
+
+                    <br/>
+                    <select id="tipoHamburguesa" name="tipoHamburguesa">
+                        <option value="0">Ninguno</option>
+                        <option value="1">Simple</option>
+                        <option value="2">Doble</option>
+                        <option value="3">Triple</option>
+                        <option value="4">Simple con Queso</option>
+                        <option value="5">Doble con Queso</option>
+                        <option value="6">Triple con Queso</option>
+                    </select>
+                </p>
+                <!-- Tipo de Pan -->
+                <p>
+                    Elige el tipo de pan:
+
+                    <span id="breadErrorMessage" class="hiddenElement">
+                        Por favor elige un tipo de pan.
+                    </span>
+
+                    <br/>
+                    <select id="tipoPan" name="tipoPan">
+                        <option value="0">Ninguno</option>
+                        <option value="1">Integral</option>
+                        <option value="2">Blanco</option>
+                        <option value="3">Pan de Ajo</option>
+                        <option value="4">Pan con Parmesano</option>
+                        <option value="5">Pan con Parmesano</option>
+                    </select>
+                </p>
+                <!-- Aderezo -->
+                <p>
+                    ¿Desea su hamburguesa con mayonesa, cátsup y mostaza?
+
+                    <span id="aderezosErrorMessage" class="hiddenElement">
+                        Por favor ingrese si desea aderezos o no.
+                    </span>
+
+                    <br/>
+                    <input type="radio" class="aderezos" id="aderezos_si" value="si"> Sí <br/>
+                    <input type="radio" class="aderezos" id="aderezos_no" value="no"> No <br/>
+                </p>
+                <!-- Complementos opcionales -->
+                <p>
+                    Elija los complementos de su preferencia:<br/>
+                    <input type="checkbox" id="c1-1" class="complemento1" value="1">Tomate<br/>
+                    <input type="checkbox" id="c1-2" class="complemento1" value="2">Lechuga<br/>
+                    <input type="checkbox" id="c1-3" class="complemento1" value="3">Cebolla<br/>
+                    <input type="checkbox" id="c1-4" class="complemento1" value="4">Pepinillos<br/>
+                    <input type="checkbox" id="c1-5" class="complemento1" value="5">Aguacate<br/>
+                    <input type="checkbox" id="c1-6" class="complemento1" value="6">Repollo<br/>
+                    <input type="checkbox" id="c1-7" class="complemento1" value="7">Pimiento<br/>
+                    <input type="checkbox" id="c1-8" class="complemento1" value="8">Jalapeños<br/>
+                    <input type="checkbox" id="c1-9" class="complemento1" value="9">Champiñones<br/>
+                    <input type="checkbox" id="c1-10" class="complemento1" value="10">Tocino<br/>
+                    <input type="checkbox" id="c1-11" class="complemento1" value="11">Queso Extra<br/>
+                    <input type="checkbox" id="c1-12" class="complemento1" value="12">Cebolla a la Parrilla<br/>
+                    <input type="checkbox" id="c1-13" class="complemento1" value="13">Pimiento a la Parrilla<br/>
+                    <input type="checkbox" id="c1-14" class="complemento1" value="14">Aceite de Oliva<br/>
+                </p>
+                <!-- Salsas opcionales -->
+                <p>
+                    Elija las salsas de su preferencia:<br/>
+                    <input type="checkbox" id="c2-1" class="complemento2" value="1">Salsa Mr.Burger<br/>
+                    <input type="checkbox" id="c2-2" class="complemento2" value="2">Salsa al Bistec<br/>
+                    <input type="checkbox" id="c2-3" class="complemento2" value="3">Salsa Barbeque<br/>
+                    <input type="checkbox" id="c2-4" class="complemento2" value="4">Salsa Picante<br/>
+                    <input type="checkbox" id="c2-5" class="complemento2" value="5">Honey Mustard<br/>
+                    <input type="checkbox" id="c2-6" class="complemento2" value="6">Ranch<br/>
+                    <input type="checkbox" id="c2-7" class="complemento2" value="7">Salsa Chipotle<br/>
+                    <input type="checkbox" id="c2-8" class="complemento2" value="8">Aceite de Oliva<br/>
+                </p>
+                <!-- Adicionales opcionales -->
+                <p>
+                    Adicionales:<br/>
+                    <input type="checkbox" id="c3-1" class="adicional" value="1">Ensalada<br/>
+                    <input type="checkbox" id="c3-2" class="adicional" value="2">Papas a la Francesa<br/>
+                    <input type="checkbox" id="c3-3" class="adicional" value="1">Papas Cris-Cut<br/>
+                </p>
+                <!-- Cantidad de Hamburguesas -->
+                <p>
+                    Cantidad de Hamburguesas: <input type="text" id="cantidadHamburguesas">
+                    <span id="quantityErrorMessage" class="hiddenElement">
+                        Por favor ingresa la cantidad de hamburguesas.
+                    </span>
+                </p>
+
+                <!-- La orden no está completa -->
+                <center>
+                    <span id="ordenNoCompleta" class="hiddenElement">¡La orden no está completa!</span>
+                </center>
+
+                <!-- Botones -->
+                <center>
+                    <input type="submit" value="Resetear Orden" id="resetearOrden" />
+                    <input type="submit" value="Agregar a Carrito" id="agregarCarrito" />
+
+                </center>
+
+                <span id="resumenOrden" class="hiddenElement">
+                    <h3>Resumen de la orden</h3>
+                    <p id="nombreOrden" class="resumen"></p>
+                    <p id="tipoOrden" class="resumen"></p>
+                    <p id="panOrden" class="resumen"></p>
+                    <p id="aderezosOrden" class="resumen"></p>
+                    <p id="complementosOrden" class="resumen"></p>
+                    <p id="11" class="resumen"></p>
+                    <p id="12" class="resumen"></p>
+                    <p id="13" class="resumen"></p>
+                    <p id="14" class="resumen"></p>
+                    <p id="15" class="resumen"></p>
+                    <p id="16" class="resumen"></p>
+                    <p id="17" class="resumen"></p>
+                    <p id="18" class="resumen"></p>
+                    <p id="19" class="resumen"></p>
+                    <p id="110" class="resumen"></p>
+                    <p id="111" class="resumen"></p>
+                    <p id="112" class="resumen"></p>
+                    <p id="113" class="resumen"></p>
+                    <p id="114" class="resumen"></p>
+                    <p id="salsasOrden" class="resumen"></p>
+                    <p id="21" class="resumen"></p>
+                    <p id="22" class="resumen"></p>
+                    <p id="23" class="resumen"></p>
+                    <p id="24" class="resumen"></p>
+                    <p id="25" class="resumen"></p>
+                    <p id="26" class="resumen"></p>
+                    <p id="27" class="resumen"></p>
+                    <p id="28" class="resumen"></p>
+                    <p id="adicionalesOrden" class="resumen"></p>
+                    <p id="31" class="resumen"></p>
+                    <p id="32" class="resumen"></p>
+                    <p id="33" class="resumen"></p>
+                    <p id="cantidadOrden" class="resumen"></p>
+                    
+                    <center>
+                        <input type="submit" value="Confirmar" id="agregarOrdenTabla" />
+                        <input type="submit" value="Cancelar" id="cancelarOrdenTabla" />
+                    </center>
+                    
+                    <!-- Sección para iniciar sesión en a creación de una orden de pedido -->
+                    <div id="loginPedido" class="hiddenSection">
+                        <fieldset>
+                            <legend>Inicia sesión</legend>
+                            <center>
+                                <p>
+                                    Ingresa tu nombre de usuario:
+                                    <input type="text" id="usuarioIngresoPedido" class="formElement">
+                                    <span id="usuarioIngresoErrorMessagePedido" class="hiddenElement">
+                                        Ingresa tu usuario.
+                                    </span>
+                                </p>
+                                <p>
+                                    Ingresa tu contraseña:
+                                    <input type="password" id="contrasenaIngresoPedido" class="formElement">
+                                    <span id="contrasenaIngresoErrorMessagePedido" class="hiddenElement">
+                                        Ingresa tu contraseña.
+                                    </span>
+                                </p>
+
+                                <!-- Checkbox para recordar credenciales -->
+                                <p>
+                                    <input type="checkbox" id="recordarCredencialesPedido" checked> Recuerda mis datos.
+                                </p>
+
+                                <input type="submit" id="iniciarSesionPedido" value="Inicia Sesión">
+
+                                <br/>
+                                <span id="inicioSesionErrorMessagePedido" class="hiddenElement">
+                                    Los datos proporcionados no son correctos.
+                                </span>
+                            </center>
+                        </fieldset>
+                    </div>
+                    
+                </span>
+            </fieldset>
+        </div>
+        
+        <!-- Página para dejar un comentario -->
+        <div id="comentario" class="hiddenSection">
+            <fieldset id="formaComentario">
+                <legend>Haz un comentario</legend>
+                Correo: <span id="correoErrorMessage" class="hiddenElement">Por favor ingresa tu correo.</span><br/>
+                <input type="text" id="correoComentario" class="formElement">
+                <br/>
+                Comentario: <span id="comentarioErrorMessage" class="hiddenElement">Por favor ingresa tu comentario.</span><br/>
+                <textarea id="comentarioComentario" class="formElement"></textarea>
+                <br/>
+                <input type="submit" id="comentarComentario">
+            </fieldset>
+            <! -- Sección para iniciar sesión en los comentarios -->
+            <div id="loginEnComentarios" class="hiddenSection">
+                <fieldset>
+                    <legend>Inicia sesión</legend>
+                    <center>
+                        <p>
+                            Ingresa tu nombre de usuario:
+                            <input type="text" id="usuarioComentarios" class="formElement">
+                            <span id="usuarioIngresoComentariosErrorMessage" class="hiddenElement">
+                                Ingresa tu usuario.
+                            </span>
+                        </p>
+                        <p>
+                            Ingresa tu contraseña:
+                            <input type="password" id="contrasenaComentarios" class="formElement">
+                            <span id="contrasenaIngresoComentariosErrorMessage" class="hiddenElement">
+                                Ingresa tu contraseña.
+                            </span>
+                        </p>
+                        
+                        <!-- Checkbox para recordar credenciales en los comentarios-->
+                        <p>
+                            <input type="checkbox" id="recordarCredencialesComentarios" checked> Recuerda mis datos.
+                        </p>
+                        
+                        <input type="submit" id="iniciarSesionComentarios" value="Inicia Sesión">
+                        <input type="submit" id="registrarseEnComentarios" value="Registrate">
+                        <input type="submit" id="volverFormaComentarios" value="Volver">
+                        <br/>
+                        <span id="inicioSesionComentariosErrorMessage" class="hiddenElement">
+                            Los datos proporcionados no son correctos.
+                        </span>
+                    </center>
+                </fieldset>
+            </div>
+            
+            <!-- Página para el registro de un usuario nuevo en comentario -->
+            <div id="registroEnComentarios" class="hiddenSection">
+                <fieldset>
+                    <legend>Creación de usuario</legend>
+                    Ingresa tu nombre:
+                    <input type="text" id="nombreRegistroComentarios" class="formElement"><br/>
+                    Ingresa tus apellidos:
+                    <input type="text" id="apellidosRegistroComentarios" class="formElement"><br/>
+                    Ingresa tu nombre de usuario:
+                    <input type="text" id="nombreUsuarioRegistroComentarios" class="formElement"><br/>
+                    Ingresa tu contraseña:
+                    <input type="password" id="contrasenaRegistroComentarios" class="formElement"><br/>
+                    <input type="submit" id="registrarUsuarioEnComentarios" value="Registrate">
+                    <input type="submit" id="volverDeRegistroAmenuPrincipal" value="Volver">
+                </fieldset>
+            </div>
+            
+            <fieldset>
+                <legend>Comentarios</legend>
+                <div id="commentContainer">
+                    <table id="commentTable">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </table>
+                </div>
+            </fieldset>
+            
+        </div>
+        
+        <!-- Página para conocer a los chefs -->
+        <div id="chefs" class="hiddenSection">
+            <fieldset id="formaChefs">
+                <legend>Chefs</legend>
+                <div id="chefsContainer">
+                    <table id="chefsTable">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Edad</th>
+                            <th>Tipo</th>
+                            <th id="especialidadesTabla">Especialidades</th>
+                        </tr>
+                    </table>
+                </div>    
+            </fieldset>
+        </div>
+        
+        <!-- Página para el registro de un usuario nuevo -->
+        <div id="registro" class="hiddenSection">
+            <fieldset>
+                <legend>Creación de usuario</legend>
+                <p>
+                    Ingresa tu nombre:<br/>
+                    <input type="text" id="nombreRegistro" class="formElement">
+                    <span id="nombreRegistroErrorMessage" class="hiddenElement">
+                        Por favor ingresa tu nombre.
+                    </span>
+                </p>
+
+                <p>
+                    Ingresa tus apellidos:<br/>
+                    <input type="text" id="apellidosRegistro" class="formElement">
+                    <span id="apellidosRegistroErrorMessage" class="hiddenElement">
+                        Por favor ingresa tus apellidos.
+                    </span>
+                </p>
+
+                <p>
+                    Ingresa tu nombre de usuario:<br/>
+                    <input type="text" id="nombreUsuarioRegistro" class="formElement">
+                    <span id="nombreUsuarioRegistroErrorMessage" class="hiddenElement">
+                        Por favor ingresa tu nombre de usuario.
+                    </span>
+                    <span id="nombreUsuarioRepetido" class="hiddenElement">
+                        Por favor ingresa otro nombre de usuario.
+                    </span>
+                </p>
+
+                <p>
+                    Ingresa tu contraseña:<br/>
+                    <input type="password" id="contrasenaRegistro" class="formElement">
+                    <span id="constrasenaRegistroErrorMessage" class="hiddenElement">
+                        Por favor ingresa tu contraseña.
+                    </span>
+                    <span id="contrasenaRepetida1" class="hiddenElement">
+                        Las contraseñas no coinciden, por favor vuelve a ingresarlas.
+                    </span>
+                </p>
+
+                <p>
+                    Confirma tu contraseña:<br/>
+                    <input type="password" id="contrasenaConfirmacionRegistro" class="formElement">
+                    <span id="contrasenaConfirmacionRegistroErrorMessage" class="hiddenElement">
+                        Por favor confirma tu contraseña.
+                    </span>
+                    <span id="contrasenaRepetida2" class="hiddenElement">
+                        Las contraseñas no coinciden, por favor vuelve a ingresarlas.
+                    </span>
+                </p>
+                
+                <input type="submit" id="registrarUsuario" value="Registrate">
+                
+            </fieldset>
+            
+        </div>
+        
+        <!-- Página para el inicio de sesión -->
+        <div id="login" class="hiddenSection">
+            <fieldset>
+                <legend>Inicia sesión</legend>
+                <center>
+                    <p>
+                        Ingresa tu nombre de usuario:
+                        <input type="text" id="usuarioIngreso" class="formElement">
+                        <span id="usuarioIngresoErrorMessage" class="hiddenElement">
+                            Ingresa tu usuario.
+                        </span>
+                    </p>
+                    <p>
+                        Ingresa tu contraseña:
+                        <input type="password" id="contrasenaIngreso" class="formElement">
+                        <span id="contrasenaIngresoErrorMessage" class="hiddenElement">
+                            Ingresa tu contraseña.
+                        </span>
+                    </p>
+                    
+                    <!-- Checkbox para recordar credenciales -->
+                    <p>
+                        <input type="checkbox" id="recordarCredenciales" checked> Recuerda mis datos.
+                    </p>
+                    
+                    <input type="submit" id="iniciarSesion" value="Inicia Sesión">
+                    <input type="submit" id="cerrarSesion" value="Eliminar credenciales">
+                    
+                    <br/>
+                    <span id="inicioSesionErrorMessage" class="hiddenElement">
+                        Los datos proporcionados no son correctos.
+                    </span>
+                </center>
+            </fieldset>
+        </div>
+        
+        <!-- Página para el ver las ordenes -->
+        <div id="ordenes" class="hiddenSection">
+            <fieldset id="formaPedidos">
+                <legend>Tus ordenes</legend>
+                <div id="pedidosContainer">
+                    <table id="pedidosTable">
+                        <tr>
+                            <th>Orden del pedido</th>
+                            <th>Tipo de Hamburguesa</th>
+                            <th>Tipo de pan</th>
+                            <th>Aderezos</th>
+                            <th>Cantidad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+        
+    </body>
+</html>

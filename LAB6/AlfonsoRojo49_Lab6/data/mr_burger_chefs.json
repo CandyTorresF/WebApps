@@ -1,0 +1,68 @@
+{
+  "contactos": [
+      {
+        "nombre" : "Julieta",
+        "apellidos" : "Gomez Perez",
+        "edad" : "27",
+        "tipo" : "Chef Ejecutivo",
+        "especialidades" : [
+          {
+            "especialidad" : "Chef Saucier",
+            "clave" : "CS"
+          },
+          {
+            "especialidad" : "Chef Grillardin",
+            "clave" : "CG"
+          },
+          {
+            "especialidad" : "Chef Friturier",
+            "clave" : "CF"
+          }
+        ]
+      },
+      {
+        "nombre" : "Rodolfo",
+        "apellidos" : "Lopez Bustamante",
+        "edad" : "34",
+        "tipo" : "Sous Chef",
+        "especialidades" : [
+          {
+            "especialidad" : "Chef Rotisseur",
+            "clave" : "CR"
+          },
+          {
+            "especialidad" : "Chef Entremetier",
+            "clave" : "CE"
+          }
+        ]
+      },
+      {
+        "nombre" : "Andres",
+        "apellidos" : "Garza Santos",
+        "edad" : "42",
+        "tipo" : "Senior Chef",
+        "especialidades" : [
+          {
+            "especialidad" : "Chef Poissonier",
+            "clave" : "CP"
+          },
+          {
+            "especialidad" : "Chef Tournant",
+            "clave" : "CT"
+          },
+          {
+            "especialidad" : "Garde Manager",
+            "clave" : "GM"
+          },
+          {
+            "especialidad" : "Chef Bouchier",
+            "clave" : "CB"
+          },
+          {
+            "especialidad" : "Chef Patissier",
+            "clave" : "PT"
+          }
+        ]
+      }
+    ]
+}

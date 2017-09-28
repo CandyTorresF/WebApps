@@ -1,0 +1,203 @@
+body{
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+    color: #4F545F;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: coral;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+fieldset{
+    border: 2px solid coral;
+    margin: 20px;
+    padding: 20px;
+}
+
+legend{
+    color: gray;
+    font-size: 1.3em;
+    font-weight: 900;
+    text-align: center;
+}
+
+/*
+div{
+    background-color: coral;
+    font-size: 20px;
+    margin: 0px;
+    padding: 20px;
+}
+*/
+
+ul{
+    list-style-type: none;
+}
+
+.hiddenElement, .hiddenSection{
+    display: none;
+}
+
+.hiddenRoot{
+    display: none;
+}
+
+.resumen{
+    color: orangered;
+}
+
+#clientNameErrorMessage{
+    color: red;
+}
+
+#quantityErrorMessage{
+    color: red;
+}
+
+#typeErrorMessage{
+    color: red;
+}
+
+#aderezosErrorMessage{
+    color: red;
+}
+
+#breadErrorMessage{
+    color: red;
+}
+
+#ordenNoCompleta{
+    color: red;
+    text-align: center;
+}
+
+ul#menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #CCC;
+    overflow: hidden;
+}
+
+ul#menu li{
+    float: left;
+    padding: 20px;
+}
+
+ul#menu li:hover, ul#menu li.selected{
+    background-color: #999;
+    color: white;
+    cursor: pointer;
+}
+
+#slogan{
+    margin-top: auto;
+    color: white;
+    font-size: 26px;
+    font-weight:bold;
+    background-color: coral;
+}
+
+#imagen{
+    margin-top: 20px;
+}
+
+#resetearOrden{
+    text-align: center;
+    background: #A0A0A0;
+}
+
+#agregarCarrito{
+    text-align: center;
+    background: #FF9933;
+}
+
+#comentarComentario{
+    text-align: center;
+    background: #FF9933;
+}
+
+input[type=submit]{
+    padding: 10px 20px;
+    font-size: 1.3em;
+    color: white;
+    margin: 0 0 0 20px;
+    border: 0;
+}
+
+input[type=submit]:hover{
+    cursor: pointer;
+}
+
+.formElement{
+    font-size: 1em;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+#correoErrorMessage{
+    color: red;
+}
+
+#comentarioErrorMessage{
+    color: red;
+}
+
+#nombreRegistroErrorMessage{
+    color: red;
+}
+
+#apellidosRegistroErrorMessage{
+    color: red;
+}
+
+#nombreUsuarioRegistroErrorMessage{
+    color: red;
+}
+
+#constrasenaRegistroErrorMessage{
+    color: red;
+}
+
+#contrasenaConfirmacionRegistroErrorMessage{
+    color: red;
+}
+
+#nombreUsuarioRepetido{
+    color: blue;
+}
+
+#contrasenaRepetida1{
+    color: green;
+}
+#contrasenaRepetida2{
+    color: green;
+}
+
+#usuarioIngresoErrorMessage{
+    color: red;
+}
+#contrasenaIngresoErrorMessage{
+    color: red;
+}
+
+#inicioSesionErrorMessage{
+    color: red;
+}
+
+#usuarioIngresoErrorMessagePedido{
+    color: red;
+}
+#contrasenaIngresoErrorMessagePedido{
+    color: red;
+}
+
+#inicioSesionErrorMessagePedido{
+    color: red;
+}
